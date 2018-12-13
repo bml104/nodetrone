@@ -149,7 +149,7 @@ function CommandRequest(){
 	});								
 	
 }
-
+CommandRequest();
 console.log('win');
 /*
 console.log('-_-_-_- TPL 2018 -_-_-_-_-_-');
