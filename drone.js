@@ -38,6 +38,24 @@ process.stdin.on('keypress', (str, key) => {
     console.log();
   }
 })
+function TakeoffRequest(){
+	
+	var message = new Buffer('takeoff');
+
+	client.send(message, 0, message.length, PORT, HOST, function(err, bytes) {
+    if (err) throw err;     
+  }
+  );
+}
+
+function LandRequest(){
+
+	var message = new Buffer('land');
+
+	client.send(message, 0, message.length, PORT, HOST, function(err, bytes) {
+		if (err) throw err;
+	});
+}
 
 function sendCommand (telloCommand) {
 
@@ -146,10 +164,17 @@ function CommandRequest(){
 	client.on('message', (msg,info) => {
 		console.log('Data received from server : ' + msg.toString());
 		console.log('Received %d bytes from %s:%d\n',msg.length, info.address, info.port);
-	});								
+  });		
+  
+
+
+
+
 	
 }
 CommandRequest();
+TakeoffRequest();
+LandRequest();
 console.log('win');
 /*
 console.log('-_-_-_- TPL 2018 -_-_-_-_-_-');
