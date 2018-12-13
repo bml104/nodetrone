@@ -1,0 +1,14 @@
+{
+  "name": "copter1",
+  "version": "1.0.0",
+  "description": "Tell Copter 1",
+  "main": "drone.js",
+  "scripts": {
+    "test": "none"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "got": "^9.4.0"
+  }
+}
